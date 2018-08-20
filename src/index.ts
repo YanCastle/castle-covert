@@ -18,7 +18,7 @@ export function base_covert(from: number, to: number, data: string | number): st
     if (from != 10) {
         data = data.toString()
         for (let i = data.length - 1; i >= 0; i--) {
-            ten += (covert.indexOf(data.substr(i, 1)) * (Math.pow(from, data.length - 1 - i)))
+            ten += ((covert.indexOf(data.substr(i, 1))) * (Math.pow(from, data.length - 1 - i)))
         }
     } else {
         ten = Number(data)
@@ -26,13 +26,13 @@ export function base_covert(from: number, to: number, data: string | number): st
     if (to == 10) {
         return ten;
     } else {
-        let s = ''
+        let s = []
         while (true) {
-            s += covert[ten % to];
-            if (ten > to) {
+            s.push(covert[ten % to]);
+            if (ten >= to) {
                 ten = Math.floor(ten / to)
             } else {
-                return s;
+                return s.reverse().join('')
             }
         }
     }
