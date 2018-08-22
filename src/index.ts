@@ -13,7 +13,7 @@ export function base_covert(from: number, to: number, data: string | number): st
         throw 'ToLarge'
     }
     let ten = 0;
-    if (from == 16) { data = data.toString().toUpperCase() }
+    if (from <= 36) { data = data.toString().toUpperCase() }
     //转10进制
     if (from != 10) {
         data = data.toString()
