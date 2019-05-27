@@ -9,7 +9,7 @@ export var covert = [
  * @param data 转化数据
  */
 export function base_covert(from: number, to: number, data: string | number): string | number {
-    if (from > 62 || to > 62) {
+    if (from > covert.length || to > covert.length) {
         throw 'ToLarge'
     }
     let ten = 0;
